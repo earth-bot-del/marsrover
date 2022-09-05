@@ -4,7 +4,12 @@ rover_width=100;
 rover_height=90;
 rover_x=10;
 rover_y=10;
-background_image="mars.jpg";
+
+images_array=["pic1.jpeg", "pic2.jpg", "pic3.jpg", "pic4.jpg"];
+random_number=Math.floor(Math.random()*4);
+
+background_image=images_array[random_number];
+console.log("background image="+background_image);
 rover_image="rover.png";
 function add()
 {
@@ -48,5 +53,52 @@ function my_keydown(e)
     {
         right();
         console.log("right");
+    }
+}
+function up()
+{
+    if (rover_y>=0)
+    {
+        rover_y=rover_y-10;
+        console.log("when up arrow is pressed, x = "+rover_x+"and y = "+ rover_y);
+        uploadbackground();
+        uploadrover();
+
+    }
+}
+
+function down()
+{
+    if (rover_y<=500)
+    {
+        rover_y=rover_y+10;
+        console.log("when down arrow is pressed, x = "+rover_x+"and y = "+ rover_y);
+        uploadbackground();
+        uploadrover();
+        
+    }
+}
+
+function left()
+{
+    if (rover_x>=0)
+    {
+        rover_x=rover_x-10;
+        console.log("when left arrow is pressed, x = "+rover_x+"and y = "+ rover_y);
+        uploadbackground();
+        uploadrover();
+        
+    }
+}
+
+function right()
+{
+    if (rover_x<=700)
+    {
+        rover_x=rover_x+10;
+        console.log("when right arrow is pressed, x = "+rover_x+"and y = "+ rover_y);
+        uploadbackground();
+        uploadrover();
+        
     }
 }
